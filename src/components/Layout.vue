@@ -23,35 +23,17 @@
   </b-navbar>
 
   <b-container class="my-5 bv-example-row">
-    <b-card-group v-for="(item,index) in personajes" :key="index">
+    <b-card-group>
     <b-row>
-      <b-col cols="12" sm="12" md="6" lg="4" xl="4">
+      <b-col class="mb-3" cols="6" sm="8" md="4" lg="4" xl="4" v-for="(personajes,index) in personajes" :key="index">
           <b-card>
-            <img :src="personajes[index].imagen" img-alt="Card image" img-top>
+            <img :src="personajes.imagen" img-alt="Card image" img-top>
             <b-card-text>
-              {{personajes[index].nombre}}
+              {{personajes.nombre}}
             </b-card-text>
           </b-card>
       </b-col>
-      <b-col cols="12" sm="12" md="6" lg="4" xl="4">
-          <b-card>
-            <img :src="personajes[index].imagen" img-alt="Card image" img-top>
-            <b-card-text>
-              {{personajes[index].nombre}}
-            </b-card-text>
-          </b-card>
-      </b-col>
-      <b-col cols="12" sm="12" md="6" lg="4" xl="4">
-          <b-card>
-            <img :src="personajes[index].imagen" img-alt="Card image" img-top>
-            <b-card-text>
-              {{personajes[index].nombre}}
-            </b-card-text>
-          </b-card>
-      </b-col>   
     </b-row>
-
-    
     </b-card-group>
   </b-container>
 </div>
