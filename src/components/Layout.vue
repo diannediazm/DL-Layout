@@ -22,71 +22,38 @@
     </b-collapse>
   </b-navbar>
 
-  <div class="container d-flex my-5">
-    <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2 mr-2"
-  >
-  </b-card>
-  <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2 mr-2"
-  >
-  </b-card>
-  <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2 mr-2"
-  >
-  </b-card>
-  </div>
+  <b-container class="my-5 bv-example-row">
+    <b-card-group v-for="(item,index) in personajes" :key="index">
+    <b-row>
+      <b-col cols="12" sm="12" md="6" lg="4" xl="4">
+          <b-card>
+            <img :src="personajes[index].imagen" img-alt="Card image" img-top>
+            <b-card-text>
+              {{personajes[index].nombre}}
+            </b-card-text>
+          </b-card>
+      </b-col>
+      <b-col cols="12" sm="12" md="6" lg="4" xl="4">
+          <b-card>
+            <img :src="personajes[index].imagen" img-alt="Card image" img-top>
+            <b-card-text>
+              {{personajes[index].nombre}}
+            </b-card-text>
+          </b-card>
+      </b-col>
+      <b-col cols="12" sm="12" md="6" lg="4" xl="4">
+          <b-card>
+            <img :src="personajes[index].imagen" img-alt="Card image" img-top>
+            <b-card-text>
+              {{personajes[index].nombre}}
+            </b-card-text>
+          </b-card>
+      </b-col>   
+    </b-row>
 
-  <div class="container d-flex my-5">
-    <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2 mr-2"
-  >
-  </b-card>
-  <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2 mr-2"
-  >
-  </b-card>
-  <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2 mr-2"
-  >
-  </b-card>
-  </div>
+    
+    </b-card-group>
+  </b-container>
 </div>
   
 </template>
@@ -94,7 +61,43 @@
 <script>  
 export default {
   name: 'Layout',
-}
+    data(){
+      return {
+        personajes: [
+          {
+          'id' : 1 ,
+          'nombre' : 'Morty' ,
+          'imagen' :
+          'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
+          },
+          {
+          'id' : 2 ,
+          'nombre' : 'Rick' ,
+          'imagen' :
+          'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+          },
+          {
+          'id' : 3 ,
+          'nombre' : 'Summer' ,
+          'imagen' :
+          'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
+          },
+          {
+          'id' : 4 ,
+          'nombre' : 'Beth' ,
+          'imagen' :
+          'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
+          },
+          {
+          'id' : 5 ,
+          'nombre' : 'Jerry' ,
+          'imagen' :
+          'https://rickandmortyapi.com/api/character/avatar/5.jpeg'
+          }
+          ]
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
