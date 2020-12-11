@@ -2,6 +2,11 @@
 <div>
   <b-navbar toggleable type="dark" variant="dark">
     <b-navbar-brand href="#">MI APP</b-navbar-brand>
+    <div class="links">
+    <b-nav-item href="#2">Inicio</b-nav-item>
+    <b-nav-item href="#2">Buscar</b-nav-item>
+    <b-nav-item href="#2">Acerca de</b-nav-item>
+    </div>
         <b-navbar-toggle target="navbar-toggle-collapse">
       <b-navbar-nav>
         <b-nav-item href="#">Link</b-nav-item>
@@ -84,5 +89,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.links {
+  list-style: none;
+  display: flex;
+  margin-left: 1000px;
+}
+.nav-link {
+  color: white;
+}
 </style>
